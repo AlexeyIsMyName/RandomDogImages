@@ -11,26 +11,40 @@ class RandomDogImagesViewController: UIViewController {
     
     @IBOutlet var dogCollectionView: UICollectionView!
     
+    private var acivityIndicator = UIActivityIndicatorView()
+    
     var dogImages: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dogCollectionView.dataSource = self
         dogCollectionView.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         refreshButtonPressed()
+        setUpActivityIndicator()
     }
     
     @IBAction func refreshButtonPressed() {
+        acivityIndicator.startAnimating()
+        
         NetworkManager.shared.fetchImages { dogImages in
             DispatchQueue.main.async {
                 self.dogImages = dogImages
                 self.dogCollectionView.reloadData()
+                
+                if self.acivityIndicator.isAnimating {
+                    self.acivityIndicator.stopAnimating()
+                }
             }
         }
+    }
+    
+    private func setUpActivityIndicator() {
+        acivityIndicator.style = .medium
+        acivityIndicator.hidesWhenStopped = true
+
+        let acivityIndicatorBarItem = UIBarButtonItem(customView: acivityIndicator)
+        navigationItem.setRightBarButton(acivityIndicatorBarItem, animated: true)
     }
 }
 

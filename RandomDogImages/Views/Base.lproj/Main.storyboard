@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,24 +18,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-kE-y7e">
-                                <rect key="frame" x="137" y="808" width="140" height="34"/>
-                                <color key="backgroundColor" red="0.76078431372549016" green="0.87058823529411766" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="103.5" y="802" width="207" height="50"/>
+                                <color key="backgroundColor" red="0.20784313725490194" green="0.25882352941176467" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="DNo-sr-4Ns"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="ZeZ-Mu-I2r"/>
+                                    <constraint firstAttribute="height" constant="50" id="DNo-sr-4Ns"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="22"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Refresh ">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" red="0.76078431372549016" green="0.87058823529411766" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="default"/>
                                 </state>
+                                <buttonConfiguration key="configuration" style="plain" title="Refresh " imagePadding="10">
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="large"/>
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="25"/>
+                                    <color key="baseForegroundColor" red="0.76078431372549016" green="0.87058823529411766" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="refreshButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="gl2-W4-QHZ"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fv3-qq-jxZ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="648"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="652"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.8980392157" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="40" id="Mv6-gS-WR1">
                                     <size key="itemSize" width="360" height="150"/>
@@ -78,15 +86,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lb5-kE-y7e" secondAttribute="bottom" constant="20" id="1rB-iN-TNP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lb5-kE-y7e" secondAttribute="bottom" constant="10" id="1rB-iN-TNP"/>
                             <constraint firstItem="Fv3-qq-jxZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="exo-rb-0Yz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fv3-qq-jxZ" secondAttribute="trailing" id="fRk-xa-vTD"/>
                             <constraint firstItem="Fv3-qq-jxZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gzs-Aq-Ho7"/>
                             <constraint firstItem="Lb5-kE-y7e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r2H-35-IcJ"/>
-                            <constraint firstItem="Lb5-kE-y7e" firstAttribute="top" secondItem="Fv3-qq-jxZ" secondAttribute="bottom" constant="20" id="veu-3P-ODy"/>
+                            <constraint firstItem="Lb5-kE-y7e" firstAttribute="top" secondItem="Fv3-qq-jxZ" secondAttribute="bottom" constant="10" id="veu-3P-ODy"/>
+                            <constraint firstItem="Lb5-kE-y7e" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="x5R-Dv-uUZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Random Dog Images" id="ulY-Wi-Oid"/>
+                    <navigationItem key="navigationItem" title="Random Dog Images" largeTitleDisplayMode="always" id="ulY-Wi-Oid"/>
                     <connections>
                         <outlet property="dogCollectionView" destination="Fv3-qq-jxZ" id="E7s-WG-fnu"/>
                     </connections>
@@ -103,6 +112,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SpV-eA-kSl">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.20784313730000001" green="0.25882352939999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -117,8 +129,5 @@
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="dog" width="500" height="335"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>
