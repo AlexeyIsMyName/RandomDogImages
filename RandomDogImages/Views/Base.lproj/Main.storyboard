@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9dP-XK-ibn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Random Dog Images-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RandomDogImagesViewController" customModule="RandomDogImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-kE-y7e">
+                                <rect key="frame" x="137" y="808" width="140" height="34"/>
+                                <color key="backgroundColor" red="0.76078431372549016" green="0.87058823529411766" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="DNo-sr-4Ns"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="ZeZ-Mu-I2r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Refresh ">
+                                    <color key="titleColor" name="AccentColor"/>
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="gl2-W4-QHZ"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fv3-qq-jxZ">
+                                <rect key="frame" x="0.0" y="140" width="414" height="648"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.8980392157" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="40" minimumInteritemSpacing="40" id="jpd-Zf-3gv">
+                                    <size key="itemSize" width="350" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="DogImageCell" id="NIC-8a-gQk" customClass="DogImageCollectionViewCell" customModule="RandomDogImages" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="0.0" width="350" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kgI-E5-8cT">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-FD-8OT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vVO-FD-8OT" secondAttribute="trailing" id="2Hd-Cq-B4h"/>
+                                                <constraint firstAttribute="bottom" secondItem="vVO-FD-8OT" secondAttribute="bottom" id="7pv-KK-AeN"/>
+                                                <constraint firstItem="vVO-FD-8OT" firstAttribute="top" secondItem="kgI-E5-8cT" secondAttribute="top" id="gNH-vB-CsY"/>
+                                                <constraint firstItem="vVO-FD-8OT" firstAttribute="leading" secondItem="kgI-E5-8cT" secondAttribute="leading" id="kd4-l3-WtG"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="dogImage" destination="vVO-FD-8OT" id="YH8-p6-gSz"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.89803921568627454" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lb5-kE-y7e" secondAttribute="bottom" constant="20" id="1rB-iN-TNP"/>
+                            <constraint firstItem="Fv3-qq-jxZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="exo-rb-0Yz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fv3-qq-jxZ" secondAttribute="trailing" id="fRk-xa-vTD"/>
+                            <constraint firstItem="Fv3-qq-jxZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gzs-Aq-Ho7"/>
+                            <constraint firstItem="Lb5-kE-y7e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r2H-35-IcJ"/>
+                            <constraint firstItem="Lb5-kE-y7e" firstAttribute="top" secondItem="Fv3-qq-jxZ" secondAttribute="bottom" constant="20" id="veu-3P-ODy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Random Dog Images" id="ulY-Wi-Oid"/>
+                    <connections>
+                        <outlet property="dogCollectionView" destination="Fv3-qq-jxZ" id="E7s-WG-fnu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="scf-Qz-4ne">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9dP-XK-ibn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SpV-eA-kSl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="baF-Hb-Icq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTp-Bw-0Mh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
