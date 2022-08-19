@@ -38,22 +38,22 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fv3-qq-jxZ">
                                 <rect key="frame" x="0.0" y="140" width="414" height="648"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.8980392157" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="40" minimumInteritemSpacing="40" id="jpd-Zf-3gv">
-                                    <size key="itemSize" width="350" height="150"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="40" id="Mv6-gS-WR1">
+                                    <size key="itemSize" width="360" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="DogImageCell" id="NIC-8a-gQk" customClass="DogImageCollectionViewCell" customModule="RandomDogImages" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="0.0" width="350" height="150"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="DogImageCell" id="NIC-8a-gQk" customClass="DogImageCollectionViewCell" customModule="RandomDogImages" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="0.0" width="360" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kgI-E5-8cT">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="150"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="kgI-E5-8cT">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-FD-8OT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="150"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-FD-8OT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="150"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -62,6 +62,11 @@
                                                 <constraint firstItem="vVO-FD-8OT" firstAttribute="top" secondItem="kgI-E5-8cT" secondAttribute="top" id="gNH-vB-CsY"/>
                                                 <constraint firstItem="vVO-FD-8OT" firstAttribute="leading" secondItem="kgI-E5-8cT" secondAttribute="leading" id="kd4-l3-WtG"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="dogImage" destination="vVO-FD-8OT" id="YH8-p6-gSz"/>
@@ -111,6 +116,7 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="dog" width="500" height="335"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -37,7 +37,6 @@ class RandomDogImagesViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension RandomDogImagesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(dogImages.count)
         return dogImages.count
     }
     
@@ -53,7 +52,10 @@ extension RandomDogImagesViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RandomDogImagesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        CGSize(width: 300, height: 100)
+        let width = UIScreen.main.bounds.width - 48
+        let dogImage = dogImages[indexPath.item]
+        let height = (width * dogImage.size.height) / dogImage.size.width
+
+        return CGSize(width: width, height: height)
     }
 }
